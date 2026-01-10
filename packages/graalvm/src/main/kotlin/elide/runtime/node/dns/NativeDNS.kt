@@ -14,15 +14,15 @@ package elide.runtime.node.dns
 
 import org.graalvm.nativeimage.ImageInfo
 
-// Library name for DNS natives.
-private const val LIB_DNS = "dns"
-
 /**
  * Native DNS operations implemented in Rust using hickory-dns.
  *
  * This object provides JNI bindings to the native DNS resolver implementation.
  */
 internal object NativeDNS {
+  // Library name for DNS natives.
+  private const val LIB_DNS = "dns"
+
   @Volatile private var libLoaded = false
 
   /**

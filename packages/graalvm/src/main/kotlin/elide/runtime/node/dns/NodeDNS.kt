@@ -25,31 +25,6 @@ import elide.runtime.intrinsics.GuestIntrinsic.MutableIntrinsicBindings
 import elide.runtime.intrinsics.js.node.DNSAPI
 import elide.runtime.lang.javascript.NodeModuleName
 
-// Member names for the dns module.
-private const val DNS_RESOLVER = "Resolver"
-private const val DNS_GET_SERVERS = "getServers"
-private const val DNS_SET_SERVERS = "setServers"
-private const val DNS_LOOKUP = "lookup"
-private const val DNS_LOOKUP_SERVICE = "lookupService"
-private const val DNS_RESOLVE = "resolve"
-private const val DNS_RESOLVE4 = "resolve4"
-private const val DNS_RESOLVE6 = "resolve6"
-private const val DNS_RESOLVE_ANY = "resolveAny"
-private const val DNS_RESOLVE_CNAME = "resolveCname"
-private const val DNS_RESOLVE_CAA = "resolveCaa"
-private const val DNS_RESOLVE_MX = "resolveMx"
-private const val DNS_RESOLVE_NAPTR = "resolveNaptr"
-private const val DNS_RESOLVE_NS = "resolveNs"
-private const val DNS_RESOLVE_PTR = "resolvePtr"
-private const val DNS_RESOLVE_SOA = "resolveSoa"
-private const val DNS_RESOLVE_SRV = "resolveSrv"
-private const val DNS_RESOLVE_TLSA = "resolveTlsa"
-private const val DNS_RESOLVE_TXT = "resolveTxt"
-private const val DNS_REVERSE = "reverse"
-private const val DNS_SET_DEFAULT_RESULT_ORDER = "setDefaultResultOrder"
-private const val DNS_GET_DEFAULT_RESULT_ORDER = "getDefaultResultOrder"
-private const val DNS_PROMISES = "promises"
-
 // Installs the Node `dns` module into the intrinsic bindings.
 @Intrinsic internal class NodeDNSModule : AbstractNodeBuiltinModule() {
   private val singleton by lazy { NodeDNS.create() }
@@ -72,6 +47,31 @@ internal class NodeDNS private constructor() : ReadOnlyProxyObject, DNSAPI {
 
   internal companion object {
     @JvmStatic fun create(): NodeDNS = NodeDNS()
+
+    // Member names for the dns module.
+    private const val DNS_RESOLVER = "Resolver"
+    private const val DNS_GET_SERVERS = "getServers"
+    private const val DNS_SET_SERVERS = "setServers"
+    private const val DNS_LOOKUP = "lookup"
+    private const val DNS_LOOKUP_SERVICE = "lookupService"
+    private const val DNS_RESOLVE = "resolve"
+    private const val DNS_RESOLVE4 = "resolve4"
+    private const val DNS_RESOLVE6 = "resolve6"
+    private const val DNS_RESOLVE_ANY = "resolveAny"
+    private const val DNS_RESOLVE_CNAME = "resolveCname"
+    private const val DNS_RESOLVE_CAA = "resolveCaa"
+    private const val DNS_RESOLVE_MX = "resolveMx"
+    private const val DNS_RESOLVE_NAPTR = "resolveNaptr"
+    private const val DNS_RESOLVE_NS = "resolveNs"
+    private const val DNS_RESOLVE_PTR = "resolvePtr"
+    private const val DNS_RESOLVE_SOA = "resolveSoa"
+    private const val DNS_RESOLVE_SRV = "resolveSrv"
+    private const val DNS_RESOLVE_TLSA = "resolveTlsa"
+    private const val DNS_RESOLVE_TXT = "resolveTxt"
+    private const val DNS_REVERSE = "reverse"
+    private const val DNS_SET_DEFAULT_RESULT_ORDER = "setDefaultResultOrder"
+    private const val DNS_GET_DEFAULT_RESULT_ORDER = "getDefaultResultOrder"
+    private const val DNS_PROMISES = "promises"
 
     private val MEMBER_KEYS = arrayOf(
       DNS_RESOLVER,
